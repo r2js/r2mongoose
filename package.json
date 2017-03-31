@@ -1,6 +1,6 @@
 {
   "name": "r2mongoose",
-  "description": "",
+  "description": "Mongoose service for r2js",
   "version": "1.0.0",
   "author": "Selçuk Fatih Sevinç",
   "license": "MIT",
@@ -23,7 +23,13 @@
   },
   "main": "index.js",
   "readmeFilename": "README.md",
-  "keywords": [],
+  "keywords": [
+    "r2js",
+    "r2mongoose",
+    "mongodb",
+    "mongoose",
+    "connection"
+  ],
   "scripts": {
     "test": "mocha"
   },

@@ -1,7 +1,7 @@
 <h1 align="center">r2mongoose</h1>
 
 <div align="center">
-  <strong></strong>
+  <strong>r2mongoose is a mongoose service for r2js</strong>
 </div>
 
 <br />
