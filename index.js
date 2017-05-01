@@ -29,5 +29,12 @@ module.exports = function Mongoose(app, conf) {
   mongoose.connection.on('open', () => log('client connected'));
   mongoose.set('debug', debug);
 
+  mongoose.plugin(function saveNew(schema) { // eslint-disable-line
+    schema.statics.saveNew = function (data) {  // eslint-disable-line
+      const Model = new this(data);
+      return Model.save();
+    };
+  });
+
   return db;
 };
