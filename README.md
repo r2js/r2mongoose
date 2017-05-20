@@ -31,6 +31,10 @@
   <a href="https://david-dm.org/r2js/r2mongoose" target="_blank">
     <img src="https://img.shields.io/david/r2js/r2mongoose.svg" alt="Dependencies" />
   </a>
+  <!-- Dev Dependencies -->
+  <a href="https://david-dm.org/r2js/r2mongoose?type=dev" target="_blank">
+    <img src="https://img.shields.io/david/dev/r2js/r2mongoose.svg" alt="Dev Dependencies" />
+  </a>
   <!-- Codeclimate -->
   <a href="https://codeclimate.com/github/r2js/r2mongoose" target="_blank">
     <img src="https://img.shields.io/codeclimate/github/r2js/r2mongoose.svg" alt="Codeclimate" />
