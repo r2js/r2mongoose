@@ -1,7 +1,7 @@
 {
   "name": "r2mongoose",
   "description": "Mongoose service for r2js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Selçuk Fatih Sevinç",
   "license": "MIT",
   "engines": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "debug": "^2.6.3",
-    "mongoose": "^4.9.2"
+    "mongoose": "^4.10.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
