@@ -7,7 +7,7 @@ describe('r2mongoose', () => {
   describe('connection', () => {
     it('should connect to mongodb', () => {
       expect(mongoose).to.not.equal(undefined);
-      expect(mongoose.connection.name).to.equal('r2test');
+      expect(mongoose.db.s.databaseName).to.equal('r2test');
     });
   });
 });

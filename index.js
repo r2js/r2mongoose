@@ -5,12 +5,11 @@ mongoose.Promise = Promise;
 module.exports = function Mongoose(app, conf) {
   const getConfig = conf || app.config('mongodb');
   if (!getConfig) {
-    return log('mongo config not found!');
+    return log('mongodb config not found!');
   }
 
   const {
-    database, host = '127.0.0.1', port = 27017,
-    server = {}, config = {}, debug = false,
+    database, host = '127.0.0.1', port = 27017, debug = false, connectOptions = {},
   } = getConfig;
 
   let { uri } = getConfig;
@@ -23,18 +22,11 @@ module.exports = function Mongoose(app, conf) {
   log('%o', getConfig);
   log(uri);
 
-  const db = mongoose.connect(uri, { server, config });
+  const db = mongoose.connect(uri, Object.assign(connectOptions, { useMongoClient: true }));
   mongoose.connection.setMaxListeners(0);
   mongoose.connection.on('error', log);
   mongoose.connection.on('open', () => log('client connected'));
   mongoose.set('debug', debug);
-
-  mongoose.plugin(function saveNew(schema) { // eslint-disable-line
-    schema.statics.saveNew = function (data) {  // eslint-disable-line
-      const Model = new this(data);
-      return Model.save();
-    };
-  });
 
   return db;
 };
