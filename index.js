@@ -22,7 +22,7 @@ module.exports = function Mongoose(app, conf) {
   log('%o', getConfig);
   log(uri);
 
-  const db = mongoose.connect(uri, Object.assign(connectOptions, { useMongoClient: true }));
+  const db = mongoose.connect(uri, Object.assign({}, connectOptions));
   mongoose.connection.setMaxListeners(0);
   mongoose.connection.on('error', log);
   mongoose.connection.on('open', () => log('client connected'));
