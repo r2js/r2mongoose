@@ -23,8 +23,8 @@ module.exports = function Mongoose(app, conf) {
   log(uri);
 
   const db = ((() => {
-      mongoose.connect(uri, Object.assign({}, connectOptions));
-      return mongoose;
+    mongoose.connect(uri, Object.assign({}, connectOptions));
+    return mongoose;
   })());
   mongoose.connection.setMaxListeners(0);
   mongoose.connection.on('error', log);
